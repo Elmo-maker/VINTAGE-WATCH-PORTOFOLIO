@@ -52,3 +52,5 @@ Menyediakan kode untuk fitur pencarian dan filter produk.
 
 Menjelaskan cara kerja setiap bagian kode.
 
+![Preview Website](assets/images/preview.jpg)
+
