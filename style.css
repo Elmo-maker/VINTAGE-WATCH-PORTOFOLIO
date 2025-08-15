@@ -1,0 +1,213 @@
+body {
+  font-family: 'Georgia', serif;
+  background-color: #fdf6e3;
+  color: #3e2c20;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #5c4033;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+nav a:hover,
+nav a.active {
+  text-decoration: underline;
+}
+
+.search-container {
+  margin-top: 10px;
+}
+
+.search-container input {
+  padding: 6px;
+  border-radius: 4px;
+  border: none;
+  width: 180px;
+}
+
+.search-container button {
+  padding: 6px 10px;
+  background-color: #8b5e3c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+section {
+  padding: 30px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+section h2 {
+  border-bottom: 2px solid #8b5e3c;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.category-bar {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.category-bar button {
+  background-color: #d9c1a3;
+  border: none;
+  padding: 8px 15px;
+  margin: 0 5px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.category-bar button:hover,
+.category-bar button.active {
+  background-color: #8b5e3c;
+  color: white;
+}
+
+.watch-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.watch-card {
+  background-color: #fff8f0;
+  border: 1px solid #d9c1a3;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.watch-card:hover {
+  transform: scale(1.03);
+}
+
+.watch-card img {
+  max-width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.watch-card p {
+  margin: 10px 0 0;
+  font-weight: 600;
+}
+
+iframe {
+  border-radius: 10px;
+  border: none;
+}
+
+footer {
+  background-color: #5c4033;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+#product-detail img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#product-detail button {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#product-detail button:hover {
+  background-color: #128C7E;
+}
+
+.watch-card p a {
+  color: black;       /* ganti warna jadi hitam */
+  text-decoration: none; /* hilangkan underline */
+}
+
+.watch-card p a:hover {
+  text-decoration: underline; /* opsional, kasih underline pas hover biar ada feedback */
+}
+
+/* Halaman detail produk */
+.product-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* supaya tetap di tengah walau sedikit konten */
+}
+
+.product-card {
+  background-color: #fff;
+  padding: 20px;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.product-card img.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product-card ul {
+  text-align: left; /* supaya list rapi ke kiri */
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.product-card button {
+  background-color: #8b5e3c;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.product-card button:hover {
+  background-color: #70492e;
+}

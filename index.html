@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vintage Watch Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Vintage Watch</div>
+    <nav>
+      <a href="#" class="active" onclick="scrollToSection('collection', event)">Collection</a>
+      <a href="subfolder_layer1/history.html">History</a>
+      <a href="#" onclick="scrollToSection('location', event)">Location</a>
+      <a href="#" onclick="scrollToSection('feedback', event)">Feedback</a>
+    </nav>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Cari jam tangan..." onkeyup="searchWatch()" />
+      <button onclick="searchWatch()">🔍</button>
+    </div>
+  </header>
+
+  <!-- KOLEKSI -->
+  <section id="collection">
+    <h2>Koleksi Jam Tangan</h2>
+
+    <!-- Tombol Kategori -->
+  <div class="category-bar" id="categoryBar">
+    <button class="active" onclick="filterCategory('all', this)">All</button>
+    <button onclick="filterCategory('diver', this)">Diver</button>
+    <button onclick="filterCategory('speedtimer', this)">Speedmaster</button>
+    <button onclick="filterCategory('classic', this)">Classic</button>
+    <button onclick="filterCategory('standard', this)">Standard</button>
+  </div>
+
+
+    <div class="watch-list" id="watchList">
+
+      <!--<div class="watch-card" data-category="diver">
+        <img src="assets/images/rolex(1).jpg" alt="Rolex Submariner" />
+        <p><a href="product.html?id=rolex-submariner">Rolex Submariner</a></p>
+      </div>
+
+      <!- -DIVER WATCH-->
+      <div class="watch-card" data-category="diver" onclick="goToProduct('Rolex Submariner')">
+        <img src="assets/images/rolex(1).jpg" alt="Rolex Submariner" />
+        <p><a href="product.html?id=Rolex Submariner">Rolex Submariner</a></p>
+      </div>
+      <div class="watch-card" data-category="diver" onclick="goToProduct('Omega Seamaster')">
+        <img src="assets/images/omega(2).jpg" alt="Omega Seamaster 210.90.42.20.01.001 Diver 300M 007 Edition" />
+        <p><a href="product.html?id=Omega Semaster">Omega Seamaster 210.90.42.20.01.001 Diver 300M 007 Edition</a></p>
+      </div>
+      <div class="watch-card" data-category="diver" onclick="goToProduct('Tudor Black Bay')">
+        <img src="assets/images/tudor.jpg" alt="Tudor Black Bay 58 M79030N-0001 Chronometer Black Domed Dial Steel Bracelet Strap" />
+        <p><a href="product.html?id=Tudor Black Bay">Tudor Black Bay 58 M79030N-0001 Chronometer Black Domed Dial Steel Bracelet Strap</a></p>
+      </div>
+      <div class="watch-card" data-category="diver" onclick="goToProduct('Seiko Prospex')">
+        <img src="assets/images/seiko_prspk.jpg" alt="Seiko Prospex SPB103J1 Sumo Hulk Green Dial Stainless Steel Strap" />
+        <p><a href="product.html?id=Seiko Prospex">Seiko Prospex SPB103J1 Sumo Hulk Green Dial Stainless Steel Strap</a></p>
+      </div>
+      <div class="watch-card" data-category="diver standard" onclick="goToProduct('Seiko 5 Diver')">
+        <img src="assets/images/seiko(3).jpg" alt="Seiko 5 Diver Watch" />
+        <p><a href="product.html?id=Seiko 5 Diver">Seiko 5 Diver Watch</a></p>
+      </div>
+
+        <!--SPEEDTIMER-->
+      <div class="watch-card" data-category="speedtimer" onclick="goToProduct('Omega Speedmaster')">
+        <img src="assets/images/omega(1).jpg" alt="Omega Speedmaster" />
+        <p><a href="product.html?id=Omega Speedmaster">Omega Speedmaster</a></p>
+      </div>
+      <div class="watch-card" data-category="speedtimer" onclick="goToProduct('Seiko Speedmaster')">
+        <img src="assets/images/seiko_timer(4).jpg" alt="Seiko Speedmaster" />
+        <p><a href="product.html?id=Seiko Speedmaster">Seiko Speedmaster</a></p>
+      </div>
+      <div class="watch-card" data-category="speedtimer" onclick="goToProduct('Rolex Daytona')">
+        <img src="assets/images/rolex(2).jpg" alt="Rolex Daytona" />
+        <p><a href="product.html?id=Rolex Daytona">Rolex Daytona</a></p>
+      </div>
+      <div class="watch-card" data-category="speedtimer" onclick="goToProduct('Zenith')">
+        <img src="assets/images/zenith.jpg" alt="Zenith El Primero" />
+        <p><a href="product.html?id=Zenith">Zenith El Primero</a></p>
+      </div>
+      <div class="watch-card" data-category="speedtimer" onclick="goToProduct('Rolex Daytona JM')">
+        <img src="assets/images/rolex(3).jpg" alt="Rolex Daytona John Mayer" />
+        <p><a href="product.html?id=Rolex Daytona JM">Rolex Daytona John Mayer</a></p>
+      </div>
+
+      <!--CLASSIC-->
+      <div class="watch-card" data-category="classic" onclick="goToProduct('Seiko Presage')">
+        <img src="assets/images/seiko.jpg" alt="Seiko Presage" />
+        <p><a href="product.html?id=Seiko Presage">Seiko Presage</a></p>
+      </div>
+      <div class="watch-card" data-category="classic" onclick="goToProduct('Orient Bambino')">
+        <img src="assets/images/orient(1).jpg" alt="Orient Bambino" />
+        <p><a href="product.html?id=Orient Bambino">Orient Bambino</a></p>
+      </div>
+      <div class="watch-card" data-category="classic" onclick="goToProduct('Cartier Santos')">
+        <img src="assets/images/cartier santos.jpg" alt="Cartier Santos" />
+        <p><a href="product.html?id=Cartier Santos">Cartier Santos</a></p>
+      </div>
+      <div class="watch-card" data-category="classic" onclick="goToProduct('Vacheron Constantine')">
+        <img src="assets/images/vacheron.jpg" alt="Vacheron Constantine" />
+        <p><a href="product.html?id=Vacheron Constantine">Vacheron Constantine</a>Constantine</p>
+      </div>
+      <div class="watch-card" data-category="classic" onclick="goToProduct('Rolex Day Date')">
+        <img src="assets/images/rolex(4).jpg" alt="Rolex Day Date With Leather Strap" />
+        <p><a href="product.html?id=Rolex Day Date">Rolex Day Date With Leather Strap</a></p>
+      </div>
+
+      <!--STANDARD-->
+      <div class="watch-card" data-category="standard" onclick="goToProduct('Casio Vintage')">
+        <img src="assets/images/casio(1).jpg" alt="Casio Vintage A168" />
+        <p><a href="product.html?id=Casio Vintage">Casio Vintage A168</a></p>
+      </div>
+      <div class="watch-card" data-category="standard" onclick="goToProduct('Alba Active')">
+        <img src="assets/images/alba.jpg" alt="Alba Active AS9D07X1" />
+        <p><a href="product.html?id=Alba Active">Alba Active AS9D07X1</a></p>
+      </div>
+      <div class="watch-card" data-category="standard" onclick="goToProduct('Seiko 5')">
+        <img src="assets/images/seiko5.jpg" alt="Seiko 5 Sports SRPK89K1" />
+        <p><a href="product.html?id=Seiko 5">Seiko 5 Sports SRPK89K1</a></p>
+      </div>
+      <div class="watch-card" data-category="standard" onclick="goToProduct('Casio Standard')">
+        <img src="assets/images/casio(2).jpg" alt="Casio Standard Jam Tangan Pria - Black B640WB-1ADF" />
+        <p><a href="product.html?id=Casio Standard">Casio Standard Jam Tangan Pria - Black B640WB-1ADF</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location">
+    <h2>Lokasi Store</h2>
+    <p>Jl. Mawar No. 45, Jakarta Pusat</p>
+    <iframe
+      src="https://maps.google.com/maps?q=Jakarta&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      width="100%"
+      height="250"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </section>
+
+  <!--CONTACT-->
+    <section id="feedback">
+        <h2>Feedback</h2>
+        <form>
+            <label>Nama:</label>
+            <input type="text" placeholder="Masukkan nama Anda">
+
+            <label>Email:</label>
+            <input type="email" placeholder="Masukkan email Anda">
+
+            <label>Pesan:</label>
+            <textarea placeholder="Tulis pesan Anda"></textarea>
+
+            <button type="submit">Kirim</button>
+        </form>
+    </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

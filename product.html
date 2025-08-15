@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Produk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Detail Jam Tangan</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Cari jam tangan..." onkeyup="searchWatch()" />
+      <button onclick="searchWatch()">🔍</button>
+    </div>
+  </header>
+
+  <main id="product-detail" class="product-detail"></main>
+
+  <script>
+    // Data produk
+    const products = {
+      "Rolex Submariner": {
+        name: "Rolex Submariner",
+        img: "assets/images/rolex(1).jpg",
+        price: "Rp 250.000.000",
+        description: [
+          "Jam tangan Diver premium.",
+          "Tahan air hingga 300m.",
+          "Desain ikonik dan elegan.",
+          "Material stainless steel berkualitas tinggi."
+        ],
+        whatsapp: "+6285718014006"
+      },
+      "Omega Seamaster": {
+        name: "Omega Seamaster",
+        img: "assets/images/omega(2).jpg",
+        price: "Rp 250.000.000",
+        description:[
+          "Jam tangan diving klasik.",
+          "Tahan Air hingga kedalaman 300M.",
+          "Desain ikonik dan kualitas premium mengusung konsep James Bond.",
+          "Material Stainless steel berkualitas tinggi."
+        ],
+        whatsapp: "+6285718014006"
+      },
+      "Tudor Black Bay": {
+        name: "Tudor Black Bay 58 M79030N-0001 Chronometer Black Domed Dial Steel Bracelet Strap",
+        img: "assets/images/tudor.jpg",
+        price: "Rp 250.000.000",
+        description: [
+          "Jam tangan diving klasik.",
+          "Tahan Air hingga kedalaman 200M.",
+          "Desain ikonik dan kualitas premium.",
+          "Material Stainless steel berkualitas tinggi."],
+        whatsapp: "+6285718014006"
+      },
+      "Seiko Prospex": {
+        name: "Seiko Prospex SPB103J1 Sumo Hulk Green Dial Stainless Steel Strap",
+        img: "assets/images/seiko_prspk.jpg",
+        price: "Rp 250.000.000",
+        description: [
+          "Jam tangan diving khas Seiko.",
+          "Tahan Air hingga kedalaman 200M, han",
+          "Desain ikonik dan kualitas premium.",
+          "Material Stainless steel berkualitas tinggi."
+        ],
+        whatsapp: "+6285718014006"
+      },
+      "Seiko 5 Diver": {
+        name: "Seiko 5 Diver Watch",
+        img: "assets/images/seiko(3).jpg",
+        price: "Rp 250.000.000",
+        description: [
+          "Jam tangan diving khas Seiko.",
+          "Tahan Air hingga kedalaman 200M, han",
+          "Desain ikonik dan kualitas premium dengan fitur day date.",
+          "Material Stainless steel berkualitas tinggi."
+        ],
+        whatsapp: "+6285718014006"
+      },
+
+      //SPEEDTIMER
+      "Omega Speedmaster": {
+        name: "Omega Speedmaster",
+        img: "assets/images/omega(1).jpg",
+        price: "Rp 250.000.000",
+        description: [
+          "Jam tangan yang mengusung konsep kecepatan dengan fungsi chronograph.",
+          "Tahan Air 100M.",
+          "Desain ikonik dan sport.",
+          "Material Stainless steel berkualitas tinggi dengan perpaduan Leather strap."
+        ],
+        whatsapp: "+6285718014006"
+      },
+      "Seiko Speedmaster": {
+        name: "Seiko Speedmaster",
+        img: "assets/images/seiko_timer(4).jpg",
+        price: "Rp 250.000.000",
+        description: [
+          "Jam tangan yang mengusung konsep kecepatan dengan fungsi chronograph.",
+          "Tahan Air 100M.",
+          "Design ikonik dan sporty.",
+          "Material Stainless steel berkualitas tinggi."
+        ],
+        whatsapp: "+6285718014006"
+      },
+      "Rolex Daytona": {
+        name: "Rolex Daytona",
+        img: "assets/images/rolex(2).jpg",
+        price: "Rp 250.000.000",
+        description: [
+          "Jam tangan yang mengusung konsep kecepatan dengan fungsi chronograph.",
+          "Tahan Air 100M.",
+          "Design ikonik dan sporty.",
+          "Material Stainless steel berkualitas tinggi."
+        ],
+        whatsapp: "+6285718014006"
+      },
+      "Zenith": {
+        name: "Zenith El Primero",
+        img: "assets/images/zenith.jpg",
+        price: "Rp 250.000.000",
+        description: [
+          "Jam tangan yang mengusung konsep kecepatan dengan fungsi chronograph.",
+          "Tahan Air 100M.",
+          "Design ikonik dan sporty.",
+          "Material Stainless steel berkualitas tinggi."
+        ],
+        whatsapp: "+6285718014006"
+      },
+      "Rolex Daytona JM": {
+        name: "Rolex Daytona John Mayer",
+        img: "assets/images/rolex(3).jpg",
+        price: "Rp 250.000.000",
+        description: [
+          "Jam tangan yang mengusung konsep kecepatan dengan fungsi chronograph.",
+          "Tahan Air 100M.",
+          "Design ikonik dan sporty.",
+          "Material Stainless steel berkualitas tinggi."
+        ],
+        whatsapp: "+6285718014006"
+      },
+
+      //CLASSIC
+      "Seiko Presage": {
+        name: "Seiko Presage",
+        img: "assets/images/seiko.jpg",
+        price: "Rp 8.000.000",
+        description: ["Jam tangan klasik dengan mesin mekanik Jepang yang handal."],
+        whatsapp: "+6285718014006"
+      },
+      "Orient Bambino": {
+        name: "Orient Bambino",
+        img: "assets/images/orient(1).jpg",
+        price: "Rp 8.000.000",
+        description: ["Jam tangan klasik dengan mesin mekanik Jepang yang handal."],
+        whatsapp: "+6285718014006"
+      },
+      "Cartier Santos": {
+        name: "Cartier Santos",
+        img: "assets/images/cartier santos.jpg",
+        price: "Rp 8.000.000",
+        description: ["Jam tangan klasik dengan mesin mekanik Jepang yang handal."],
+        whatsapp: "+6285718014006"
+      },
+      "Vacheron Constantine": {
+        name: "Vacheron Constantine",
+        img: "assets/images/vacheron.jpg",
+        price: "Rp 8.000.000",
+        description: ["Jam tangan klasik dengan mesin mekanik Jepang yang handal."],
+        whatsapp: "+6285718014006"
+      },
+      "Rolex Day Date": {
+        name: "Rolex Day Date With Leather Strap",
+        img: "assets/images/rolex(4).jpg",
+        price: "Rp 8.000.000",
+        description: ["Jam tangan klasik dengan mesin mekanik Jepang yang handal."],
+        whatsapp: "+6285718014006"
+      },
+
+      //STANDARD
+      "Casio Vintage": {
+        name: "Casio Vintage A168",
+        img: "assets/images/casio(1).jpg",
+        price: "Rp 8.000.000",
+        description: ["Jam tangan klasik dengan mesin mekanik Jepang yang handal."],
+        whatsapp: "+6285718014006"
+      },
+      "Alba Active": {
+        name: "Alba Active AS9D07X1",
+        img: "assets/images/alba.jpg",
+        price: "Rp 8.000.000",
+        description: ["Jam tangan klasik dengan mesin mekanik Jepang yang handal."],
+        whatsapp: "+6285718014006"
+      },
+      "Seiko 5": {
+        name: "Seiko 5 Sports SRPK89K1",
+        img: "assets/images/seiko5.jpg",
+        price: "Rp 8.000.000",
+        description: ["Jam tangan klasik dengan mesin mekanik Jepang yang handal."],
+        whatsapp: "+6285718014006"
+      },
+      "Casio Standard": {
+        name: "Casio Standard Jam Tangan Pria - Black B640WB-1ADF",
+        img: "assets/images/casio(2).jpg",
+        price: "Rp 8.000.000",
+        description: ["Jam tangan klasik dengan mesin mekanik Jepang yang handal."],
+        whatsapp: "+6285718014006"
+      },
+      // tambah produk lain sesuai kebutuhan
+    };
+
+    // Ambil ID produk dari URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+    const product = products[productId];
+
+    if (product) {
+      const detailContainer = document.getElementById('product-detail');
+
+      // Buat elemen deskripsi
+      let descriptionHTML = '';
+      if (Array.isArray(product.description)) {
+        descriptionHTML = '<ul>' + product.description.map(item => `<li>${item}</li>`).join('') + '</ul>';
+      } else {
+        descriptionHTML = `<p>${product.description}</p>`;
+      }
+
+      detailContainer.innerHTML = `
+        <div class="product-card">
+          <img src="${product.img}" alt="${product.name}" class="product-image">
+          <h2>${product.name}</h2>
+          <h3>${product.price}</h3>
+          ${descriptionHTML}
+          <button onclick="buyViaWhatsApp('${product.name} - ${product.price}')">Beli via WhatsApp</button>
+        </div>
+      `;
+    } else {
+      document.getElementById('product-detail').innerHTML = "<p>Produk tidak ditemukan.</p>";
+    }
+
+    // Fungsi beli via WhatsApp
+    function buyViaWhatsApp(message) {
+      const phone = '6285718014006'; // Nomor WhatsApp
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
+</body>
+</html>
