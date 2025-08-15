@@ -1,56 +1,34 @@
-# VINTAGE-WATCH-PORTOFOLIO
-Portofolio website penjualan jam tangan vintage dengan kategori koleksi dan fitur pencarian.
+## Vintage Watch Store
 
-# Vintage Watch Store
+Website katalog jam tangan vintage dengan kategori, pencarian, dan fitur beli via WhatsApp.  
+Dibuat untuk memudahkan kolektor dan pecinta jam tangan menemukan model yang sesuai.
 
-Website penjualan jam tangan vintage dengan kategori koleksi, fitur pencarian, dan halaman sejarah brand.  
-Proyek ini dibuat sebagai bagian dari pembelajaran pengembangan web dan Capstone Project **Code Generations and Optimization**.
-
----
-
-## Deskripsi
-Vintage Watch Store adalah website sederhana yang menampilkan koleksi jam tangan vintage dengan beberapa kategori seperti Diver, Speedtimer, Classic, dan Standard.  
-Website ini dibuat dengan desain minimalis berwarna coklat, dilengkapi filter kategori, pencarian produk, dan halaman terpisah untuk informasi sejarah.
-
----
-
-## Teknologi yang Digunakan
-- **HTML5** — Struktur halaman web.
-- **CSS3** — Styling dan tata letak.
-- **JavaScript (Vanilla)** — Fitur filter dan pencarian produk.
-- **Assets lokal** — Gambar disimpan di folder `assets/images`.
-
----
-
-## Fitur
-- Tampilan kategori koleksi jam tangan (Diver, Speedtimer, Classic, Standard).
-- Filter kategori produk.
-- Pencarian produk berdasarkan nama.
-- Halaman sejarah jam tangan (history.html).
-- Desain responsif dengan nuansa vintage minimalis.
-
----
-
-## Struktur Folder
-│
-├── index.html # Halaman utama
-├── subfolder1/history.html # Halaman sejarah
-├── style.css # Styling website
-├── script.js # Fitur interaktif
-└── assets/
-        └── images/ # Gambar produk
-
----
-
-Proses pembuatan website ini dibantu oleh AI untuk:
-
-Menyusun struktur HTML, CSS, dan JavaScript.
-
-Membuat desain minimalis dengan palet warna vintage.
-
-Menyediakan kode untuk fitur pencarian dan filter produk.
-
-Menjelaskan cara kerja setiap bagian kode.
-
+## Preview
 ![Preview Website](assets/images/preview.jpg)
 
+## Deskripsi
+Vintage Watch Store adalah website katalog jam tangan dengan desain minimalis berwarna coklat.  
+Fitur utama meliputi:
+- Kategori koleksi (Diver, Speedtimer, Classic, Standard)
+- Pencarian produk
+- Filter kategori
+- Halaman detail produk
+- Tombol beli langsung via WhatsApp
+
+## Teknologi yang Digunakan
+- HTML5
+- CSS3
+- JavaScript (Vanilla JS)
+- [Font Awesome](https://fontawesome.com/) untuk ikon
+
+## Fitur
+- **Filter Kategori**: Menampilkan produk sesuai kategori.
+- **Pencarian**: Cari jam tangan berdasarkan nama.
+- **Detail Produk**: Menampilkan deskripsi lengkap produk.
+- **Beli via WhatsApp**: Tombol otomatis mengarahkan ke chat WhatsApp.
+- **Desain Responsif**: Cocok di desktop dan mobile.
+
+## Cara Menjalankan Proyek
+1. Clone repositori:
+   ```bash
+   git clone https://github.com/username/vintage-watch-store.git
